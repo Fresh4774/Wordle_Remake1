@@ -1,0 +1,147 @@
+body {
+  background-color: #323232;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+#controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#controls button {
+  padding: 1rem;
+}
+#game {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+#game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
+}
+.board {
+  width: 300px;
+  height: 380px;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.guess {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+}
+.tile-container {
+  display: inline-block;
+}
+.tile {
+  border: 2px solid #D2DAFF;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: bold;
+  vertical-align: middle;
+  box-sizing: border-box;
+  color: #EEF1FF;
+  text-transform: uppercase;
+  user-select: none;
+}
+.tile::before {
+  content: '';
+  display: inline-block;
+  padding-bottom: 100%;
+}
+#keyboard {
+  margin: 0 8px;
+  user-select: none;
+  height: 170px;
+}
+.keyboard-row {
+  display: flex;
+  width: 100%;
+  margin: 0 auto 8px;
+  touch-action: manipulation;
+}
+.key {
+  font-family: inherit;
+  font-weight: bold;
+  border: 0;
+  padding: 0;
+  margin: 0 6px 0 0;
+  height: 50px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  background-image: linear-gradient(to left, #B1B2FF, #AAC4FF);
+  color: #212121;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.message {
+  width: 100%;
+  position: absolute;
+  will-change: opacity, visibility;
+}
+.message.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
+}
+.message.show {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
+}
+.message .text {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #212121;
+  background-image: linear-gradient(to left, #AAC4FF, #B1B2FF);
+  letter-spacing: 0.2rem;
+}
+.correct {
+  background-image: linear-gradient(to left, #AAC4FF, #B1B2FF);
+  color: #212121;
+}
+.oop {
+  background-image: linear-gradient(to left, #EEF1FF, #AAC4FF);
+  color: #212121;
+}
+.wrong {
+  background-color: #EEF1FF;
+  color: #212121;
+}
+.newGameButton {
+  background-image: linear-gradient(to left, #B1B2FF, #AAC4FF);
+  font-weight: bold;
+  color: #212121;
+  border-color: #D2DAFF;
+  margin-right: 16px;
+}
+
+.giveUpButton {
+  background-image: linear-gradient(to left, #B1B2FF, #AAC4FF);
+  font-weight: bold;
+  color: #212121;
+  border-color: #D2DAFF;
+  margin-right: 16px;
+}
